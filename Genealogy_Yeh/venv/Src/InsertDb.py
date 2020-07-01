@@ -16,7 +16,7 @@ def Insert_Info():
     while i < sheet.nrows:
         rows = sheet.row_values(i)
         c = conn.cursor()
-        c.execute("INSERT INTO Info (ID,AV,V) values(?,?,?)",(rows[0],rows[1],rows[2]));
+        c.execute("INSERT INTO Info (ID,AV,V) values(?,?,?)",(rows[0],rows[1],rows[2]))
         c.close()
         i = i + 1
     # print('Records created successfully')

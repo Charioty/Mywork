@@ -8,6 +8,8 @@ import os
 import os.path
 import shutil
 import time
+from typing import Union
+
 
 class Directory:
     def __init__(self, Url):
@@ -43,6 +45,7 @@ class TargeDir:
     def targe_name(self):
         ID ='U' + self.dirs[-6:]
         targe_name = self.name.replace('U000000',ID)
+        targe_name = targe_name.replace(targe_name[0:18],'')
         if targe_name[7:10] == 'F00':
             targe_name = targe_name.replace('F00','F01')
         elif targe_name[7:10] == 'F01':
